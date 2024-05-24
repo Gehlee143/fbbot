@@ -31,7 +31,7 @@ async function chatGPTCommand(event, api) {
     if (responseData && responseData.data) {
       api.sendMessage(responseData.data, event.threadID, event.messageID);
     } else {
-      api.sendMessage("No response from the AI.", event.threadID);
+      api.sendMessage(response + "\n\ncredits: www.facebook.com/jasrelking17", event.threadID);
     }
   } catch (error) {
     api.sendMessage("An error occurred while interacting with the AI.", event.threadID);
