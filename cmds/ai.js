@@ -29,9 +29,9 @@ async function chatGPTCommand(event, api) {
     const responseData = response.data;
     
     if (responseData && responseData.data) {
-      api.sendMessage(responseData.data, event.threadID, event.messageID);
+      api.sendMessage(responseData + ""\n\ncredits: www.facebook.com/jasrelking17", event.threadID);
     } else {
-      api.sendMessage(response + "\n\ncredits: www.facebook.com/jasrelking17", event.threadID);
+      api.sendMessage("No response from the AI.", event.threadID);
     }
   } catch (error) {
     api.sendMessage("An error occurred while interacting with the AI.", event.threadID);
